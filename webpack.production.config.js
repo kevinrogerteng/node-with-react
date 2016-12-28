@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StatsPlugin = require('stats-webpack-plugin');
+var path = require('path')
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var StatsPlugin = require('stats-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -43,7 +43,7 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        "presets": ["es2015", "stage-0", "react"]
+        'presets': ['es2015', 'stage-0', 'react']
       }
     }, {
       test: /\.json?$/,
@@ -56,4 +56,4 @@ module.exports = {
   postcss: [
     require('autoprefixer')
   ]
-};
+}
