@@ -35,7 +35,7 @@ function connectToDb(req, res) {
       }
 
       var request = prepareRequest(connection);
-      request.query('SELECT TOP 1 * FROM dbo.RMSItems;').then(function (recordset) {
+      request.query('SELECT TOP 5 * FROM dbo.RMSItems;').then(function (recordset) {
         logger.info('info', 'query succesful');
         resolve(recordset);
         connection.close();
