@@ -1,3 +1,4 @@
+const logger = require('winston')
 module.exports = (app) => {
   const samplePointService = require('../middleware.js')
 

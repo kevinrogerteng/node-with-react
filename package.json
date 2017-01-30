@@ -51,6 +51,6 @@
     "build": "npm run build-front-prod && npm run build-back-prod",
     "build-front-prod": "NODE_ENV=production webpack --config ./webpack.production.config.js",
     "build-back-prod": "./node_modules/.bin/babel ./server -d dist/back",
-    "start-prod": "babel-node server.js"
+    "start-prod": "babel-node ./dist/back/server.js"
   }
 }

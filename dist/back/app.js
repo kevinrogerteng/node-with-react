@@ -36,9 +36,9 @@ if (isDeveloping) {
   //   res.end()
   // })
 } else {
-  app.use(express.static(path.join(__dirname, '/dist/front')));
-  app.get('*', function response(req, res) {
-    res.sendFile(path.join(__dirname, 'dist/front/index.html'));
+  app.use(express.static(path.join(__dirname, '../front')));
+  app.get('/', function response(req, res) {
+    res.sendFile(path.join(__dirname, '../front/index.html'));
   });
 }
 

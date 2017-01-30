@@ -1,5 +1,6 @@
 'use strict';
 
+var logger = require('winston');
 module.exports = function (app) {
   var samplePointService = require('../middleware.js');
 
