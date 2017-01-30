@@ -2,9 +2,6 @@
 require('dotenv').config()
 const path = require('path')
 const express = require('express')
-const webpack = require('webpack')
-const webpackMiddleware = require('webpack-dev-middleware')
-const webpackHotMiddleware = require('webpack-hot-middleware')
 
 const isDeveloping = process.env.NODE_ENV !== 'production'
 
@@ -13,6 +10,10 @@ const app = express()
 
 if (isDeveloping) {
   const webpackConfig = require('../webpack.development.config.js')
+  const webpack = require('webpack')
+  const webpackMiddleware = require('webpack-dev-middleware')
+  const webpackHotMiddleware = require('webpack-hot-middleware')
+
   const compiler = webpack(webpackConfig)
   const middleware = webpackMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
