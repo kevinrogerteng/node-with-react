@@ -5,7 +5,6 @@ const express = require('express')
 const webpack = require('webpack')
 const webpackMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
-const webpackConfig = require('../webpack.development.config.js')
 
 const isDeveloping = process.env.NODE_ENV !== 'production'
 
@@ -13,6 +12,7 @@ const fs = require('fs')
 const app = express()
 
 if (isDeveloping) {
+  const webpackConfig = require('../webpack.development.config.js')
   const compiler = webpack(webpackConfig)
   const middleware = webpackMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
@@ -34,9 +34,9 @@ if (isDeveloping) {
   //   res.end()
   // })
 } else {
-  app.use(express.static(path.join(__dirname, '/dist')))
+  app.use(express.static(path.join(__dirname, '/dist/front')))
   app.get('*', function response(req, res) {
-    res.sendFile(path.join(__dirname, 'dist/index.html'))
+    res.sendFile(path.join(__dirname, 'dist/front/index.html'))
   })
 }
 

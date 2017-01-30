@@ -46,9 +46,11 @@
     "webpack-notifier": "1.4.1"
   },
   "scripts": {
-    "start": "babel-node ./server/index.js",
-    "nodemon": "nodemon ./server/index.js --exec babel-node",
+    "start": "babel-node ./server/server.js",
+    "nodemon": "nodemon ./server/server.js --exec babel-node",
+    "build": "npm run build-front-prod && npm run build-back-prod",
     "build-front-prod": "NODE_ENV=production webpack --config ./webpack.production.config.js",
-    "build-back-prod": "./node_modules/.bin/babel ./server/index.js -o server.js"
+    "build-back-prod": "./node_modules/.bin/babel ./server -d dist/back",
+    "start-prod": "babel-node server.js"
   }
 }
