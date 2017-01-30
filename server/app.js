@@ -1,4 +1,5 @@
 //App configuration along with automated endpoint creation
+require('dotenv').config()
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')

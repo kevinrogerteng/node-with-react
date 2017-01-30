@@ -1,11 +1,14 @@
 const logger = require('winston')
 const Q = require('q')
+const {connectToDb} = require('../../database/config.js')
 const sampleData = require('./samplejson.json')
 
 const getAllData = (request, response) => {
   function queryAllDatas() {
     return Q.promise((resolve, reject) => {
-      resolve(sampleData)
+      connectToDb(request, response).then((res) => {
+        resolve(res)
+      })
     }).catch((error) => {
       logger.info('error', error.body)
     })
@@ -15,5 +18,5 @@ const getAllData = (request, response) => {
 }
 
 module.exports = {
-  getAllData : getAllData
+  getAllData: getAllData
 }

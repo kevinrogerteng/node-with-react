@@ -6,9 +6,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "express": "4.14.0",
     "install": "0.8.4",
     "lodash": "4.17.2",
+    "mssql": "^3.3.0",
     "npm": "4.0.5",
     "q": "1.4.1",
     "react": "15.4.1",
@@ -43,7 +45,8 @@
     "webpack-hot-middleware": "2.13.2"
   },
   "scripts": {
-    "start": "babel-node server.js",
-    "nodemon": "nodemon server.js"
+    "start": "babel-node server.js --presets es2015,stage-2",
+    "nodemon": "nodemon server.js --exec babel-node --presets es2015,stage-2",
+    "build-prod": "NODE_ENV=production webpack --config ./webpack.production.config.js"
   }
 }
