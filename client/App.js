@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <h1> Clone Trooper List </h1>
+        <h1> Get the first five ingredients! </h1>
         <a href="/api/getAllData"> Link to Data </a>
       </div>
     )
